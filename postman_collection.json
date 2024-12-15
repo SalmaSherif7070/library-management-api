@@ -1,0 +1,93 @@
+{
+    "info": {
+      "_postman_id": "abc123",
+      "name": "Library Management API",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+      {
+        "name": "List All Books",
+        "request": {
+          "method": "GET",
+          "url": {
+            "raw": "http://localhost:3000/books",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "3000",
+            "path": ["books"]
+          }
+        },
+        "response": []
+      },
+      {
+        "name": "Add a New Book",
+        "request": {
+          "method": "POST",
+          "url": {
+            "raw": "http://localhost:3000/books",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "3000",
+            "path": ["books"]
+          },
+          "body": {
+            "mode": "raw",
+            "raw": "{\"title\": \"Book Title\", \"author\": \"Author Name\", \"published_year\": \"2024\", \"isbn\": \"1234567890123\", \"genre\": \"Fiction\"}"
+          }
+        },
+        "response": []
+      },
+      {
+        "name": "Search for Books",
+        "request": {
+          "method": "GET",
+          "url": {
+            "raw": "http://localhost:3000/books/search?author=AuthorName&year=2024&genre=Fiction",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "3000",
+            "path": ["books", "search"],
+            "query": [
+              { "key": "author", "value": "AuthorName" },
+              { "key": "year", "value": "2024" },
+              { "key": "genre", "value": "Fiction" }
+            ]
+          }
+        },
+        "response": []
+      },
+      {
+        "name": "Update a Book",
+        "request": {
+          "method": "PUT",
+          "url": {
+            "raw": "http://localhost:3000/books/1234567890123",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "3000",
+            "path": ["books", "1234567890123"]
+          },
+          "body": {
+            "mode": "raw",
+            "raw": "{\"title\": \"Updated Book Title\", \"author\": \"Updated Author Name\", \"published_year\": \"2025\", \"genre\": \"Updated Genre\"}"
+          }
+        },
+        "response": []
+      },
+      {
+        "name": "Delete a Book",
+        "request": {
+          "method": "DELETE",
+          "url": {
+            "raw": "http://localhost:3000/books/1234567890123",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "3000",
+            "path": ["books", "1234567890123"]
+          }
+        },
+        "response": []
+      }
+    ]
+  }
+  
